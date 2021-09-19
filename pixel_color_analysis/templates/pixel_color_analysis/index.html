@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>image analysis</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        header {
+            color: white;
+            background: red;
+            height: 100px;
+        }
+       form {
+            padding: 50px 0px 0px 0px;
+            font-size: 50px;
+            font-family: Centro Sans pro;
+            display: inline-block;
+       }
+       .button{
+           font-family: Centro Sans pro;
+           display: inline-block;
+           cursor: pointer;
+           font-size:24px;
+           text-decoration:none;
+           padding:15px 13px;
+           color:#ffffff;
+           background:#ff0000;
+           border-radius:43px;
+           border:18px solid #ffffff;
+       }
+       .button:hover{
+           background:#ffffff;
+           color:#000000;
+           border:18px solid #ff0000;
+           transition: all 0.2s ease;
+       }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="padding: 30px;">Загрузите фотографию и введите hex-код</h1>
+    </header>
+    <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button">Узнать больше о пикселях</button>
+    </form>
+    </body>
+</html>

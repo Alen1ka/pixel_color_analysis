@@ -1,5 +1,5 @@
 import os
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .forms import *
 from .models import *
 import re
@@ -20,9 +20,7 @@ def main_download_page(request):
 
 
 def analysis(image_name, hex_code):
-    path = os.path.join(os.path.dirname(os.path.dirname(__file__)), f'media\\{image_name}')
-    print(path)
-    print(os.getcwd())
+    path = os.path.join(os.path.dirname(os.path.dirname(__file__)), f'тестовые картинки\\{image_name}')
     image = Image.open(path)
 
     rgb = tuple()
